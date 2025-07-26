@@ -1,0 +1,24 @@
+{
+  "name": "axum-vue-template",
+  "version": "1.0.0",
+  "description": "A production-ready template for building modern web applications with a Rust (Axum) backend and a Vue.js (Vite) frontend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd backend && cargo run\" \"cd frontend && npm run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Meatball-Sub-11/axum-vue-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Meatball-Sub-11/axum-vue-template/issues"
+  },
+  "homepage": "https://github.com/Meatball-Sub-11/axum-vue-template#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
