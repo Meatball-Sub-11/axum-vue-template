@@ -48,8 +48,10 @@ jobs:
           key: ${{ runner.os }}-cargo-${{ hashFiles('backend/Cargo.lock') }}
 
       # Step 4: Run clippy for linting and code quality checks
+      # We deny all warnings (-D warnings) but specifically allow dead_code (-A dead_code)
+      # because it's expected in a template with unused placeholder code.
       - name: Run Clippy
-        run: cd backend && cargo clippy -- -D warnings
+        run: cd backend && cargo clippy -- -D warnings -A dead_code
 
       # Step 5: Run tests
       - name: Run tests
