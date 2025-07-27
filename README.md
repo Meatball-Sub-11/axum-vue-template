@@ -33,7 +33,7 @@ Before you begin, ensure you have the following installed on your system:
 
 ## Installation
 
-This project is a monorepo containing two separate applications: the `backend` (Axum) and the `frontend` (Vue). You will need to install dependencies for both.
+This project is a monorepo. You will need to install dependencies for the root, the backend, and the frontend.
 
 1.  **Clone the repository:**
     ```bash
@@ -41,7 +41,13 @@ This project is a monorepo containing two separate applications: the `backend` (
     cd <your-project-name>
     ```
 
-2.  **Set up the Backend (Axum):**
+2.  **Install Root Dependencies:**
+    This installs `concurrently`, the tool used to run both servers at once.
+    ```bash
+    npm install
+    ```
+
+3.  **Set up the Backend (Axum):**
     Navigate to the backend directory and build the project to download and compile all necessary crates.
     ```bash
     cd backend
@@ -49,7 +55,7 @@ This project is a monorepo containing two separate applications: the `backend` (
     cd .. 
     ```
 
-3.  **Set up the Frontend (Vue):**
+4.  **Set up the Frontend (Vue):**
     Navigate to the frontend directory and install the npm packages.
     ```bash
     cd frontend
@@ -70,26 +76,17 @@ The backend requires environment variables to run.
 
 ## Usage
 
-To run the application for local development, you need to start both the backend API and the frontend development server in **two separate terminal windows.**
+To run the entire application for local development, you can use a **single command** from the project's **root directory**.
 
-**1. Run the Backend (Axum API):**
-* In your first terminal, navigate to the `backend` directory and start the server:
+1.  **Run the Development Server:**
+    Make sure you are in the project's root directory.
     ```bash
-    cd backend
-    cargo run
-    ```
-* The API will now be running on `http://127.0.0.1:3000`.
-
-**2. Run the Frontend (Vue App):**
-* In your second terminal, navigate to the `frontend` directory and start the development server:
-    ```bash
-    cd frontend
     npm run dev
     ```
-* The development server will start on `http://localhost:5173`.
+    This command uses `concurrently` to start both the Axum backend API and the Vue frontend development server in the same terminal.
 
-**3. Access the application:**
-* Open your web browser and navigate to the frontend URL: **`http://localhost:5173`**. The Vue application will automatically communicate with the Axum API.
+2.  **Access the application:**
+    Open your web browser and navigate to the frontend URL: **`http://localhost:5173`**. The Vue application will automatically communicate with the Axum API.
 
 ## Contributing
 
